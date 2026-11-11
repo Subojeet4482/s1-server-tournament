@@ -1,0 +1,59 @@
+services:
+  - type: web
+    name: ff-server1-account
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: SERVER_ID
+        sync: false
+      - key: DB1_FIREBASE_CREDENTIALS_B64
+        sync: false
+      - key: S2_URL
+        sync: false
+      - key: S4_URL
+        sync: false
+      - key: S5_URL
+        sync: false
+      - key: MIN_WITHDRAW
+        sync: false
+      - key: MAX_WITHDRAW
+        sync: false
+      - key: WITHDRAW_FEE
+        sync: false
+      - key: MIN_DEPOSIT
+        sync: false
+      - key: DEPOSIT_GIVEUP_MIN
+        sync: false
+      - key: ADMIN_API_KEY
+        sync: false
+      - key: GEO_ENABLED
+        sync: false
+      - key: GEO_BLOCKED_STATES
+        sync: false
+      - key: GEO_PROVIDERS
+        sync: false
+      - key: IPINFO_TOKEN
+        sync: false
+      - key: GEO_FAIL_CLOSED
+        sync: false
+      - key: GEO_STICKY_DAYS
+        sync: false
+      - key: STATE_CHANGE_DAYS
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: INTERNAL_KEY
+        sync: false
+      - key: REQUIRE_LB
+        sync: false
+      - key: KEEPALIVE
+        sync: false
+      - key: KEEPALIVE_INTERVAL
+        sync: false
+      - key: THREADS
+        sync: false
+      - key: SITE_URL
+        sync: false
