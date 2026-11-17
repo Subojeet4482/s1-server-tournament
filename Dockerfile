@@ -15,7 +15,7 @@ COPY . .
 RUN mkdir -p /app/backups && useradd -m -u 1000 app && chown -R app:app /app
 USER app
 
-# Render sets PORT (default 10000). ONE worker + threads: background jobs (outbox, cleanup, game sweep) live in this process.
+# Render PORT env deta hai (default 10000). 1 worker + threads: background jobs isi process mein chalte hain.
 EXPOSE 10000
 HEALTHCHECK --interval=60s --timeout=10s --start-period=40s --retries=3 \
   CMD python -c "import os,urllib.request;urllib.request.urlopen('http://127.0.0.1:%s/health' % os.environ.get('PORT','10000'),timeout=8)"

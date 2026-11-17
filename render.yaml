@@ -1,59 +1,55 @@
 services:
   - type: web
-    name: ff-server1-account
+    name: ff-main
     runtime: docker
     plan: free
     dockerfilePath: ./Dockerfile
     healthCheckPath: /health
     autoDeploy: true
     envVars:
-      - key: SERVER_ID
+      - key: OWNER_EMAIL
         sync: false
-      - key: DB1_FIREBASE_CREDENTIALS_B64
+      - key: OWNER_PASSWORD
         sync: false
-      - key: S2_URL
+      - key: OWNER_PIN
         sync: false
-      - key: S4_URL
+      - key: ADMIN_EMAIL
         sync: false
-      - key: S5_URL
+      - key: ADMIN_PASSWORD
         sync: false
-      - key: MIN_WITHDRAW
+      - key: ADMIN_PIN
         sync: false
-      - key: MAX_WITHDRAW
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: FIREBASE_CREDENTIALS_B64
         sync: false
-      - key: WITHDRAW_FEE
+      - key: FIREBASE_CREDENTIALS_B641
         sync: false
-      - key: MIN_DEPOSIT
+      - key: CHAT_CORS_ORIGIN
+        value: "*"
+      - key: LOGIN_MAX_FAILS
+        value: "5"
+      - key: LOGIN_LOCK_MINUTES
+        value: "60"
+      - key: PANEL_MAIN_URL
         sync: false
-      - key: DEPOSIT_GIVEUP_MIN
+      - key: PANEL_PAYMENT_URL
         sync: false
-      - key: ADMIN_API_KEY
+      - key: PANEL_BACKUP_URL
         sync: false
-      - key: GEO_ENABLED
+      - key: UPTIMEROBOT_API_KEY
         sync: false
-      - key: GEO_BLOCKED_STATES
+      - key: LB_URL
         sync: false
-      - key: GEO_PROVIDERS
+      - key: LB_ADMIN_KEY
         sync: false
-      - key: IPINFO_TOKEN
+      - key: RENDER_API_KEY
         sync: false
-      - key: GEO_FAIL_CLOSED
-        sync: false
-      - key: GEO_STICKY_DAYS
-        sync: false
-      - key: STATE_CHANGE_DAYS
-        sync: false
-      - key: JWT_SECRET
-        sync: false
-      - key: INTERNAL_KEY
-        sync: false
-      - key: REQUIRE_LB
+      - key: RENDER_SERVICE_ID
         sync: false
       - key: KEEPALIVE
-        sync: false
+        value: "true"
       - key: KEEPALIVE_INTERVAL
-        sync: false
-      - key: THREADS
-        sync: false
-      - key: SITE_URL
-        sync: false
+        value: "600"
+      - key: SLOW_FACTOR
+        value: "1"
